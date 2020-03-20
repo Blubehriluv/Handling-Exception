@@ -6,3 +6,4 @@ void Introduction();
 void DivideByZero();
 void Menu();
 void NameLength();
+void Birthday();
