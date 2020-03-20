@@ -1,0 +1,3 @@
+﻿  Exceptions.cpp
+C:\Users\taymcken\Documents\GitHub\Handling-Exception\Exception Handling\Exceptions\Exceptions.cpp(8,1): warning C4326:  return type of 'main' should be 'int' instead of 'void'
+  Exceptions.vcxproj -> C:\Users\taymcken\Documents\GitHub\Handling-Exception\Exception Handling\Debug\Exceptions.exe
