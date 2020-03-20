@@ -1,7 +1,8 @@
 #pragma once
 
 
-void main();
+int main();
 void Introduction();
 void DivideByZero();
 void Menu();
+void NameLength();

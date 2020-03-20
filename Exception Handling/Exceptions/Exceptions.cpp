@@ -4,19 +4,44 @@
 #include "Exceptions.h"
 
 
-void main()
+int main()
 {
 
-	DivideByZero();
+	NameLength();
 	//Introduction();
 	
 }
 
+//A function that handles exceptions.
 void throwException(std::string exceptionType)
 {
 	if (exceptionType == "NameLength")
 	{
-		
+		std::cout << "Your name is far too long!" << std::endl;
+		std::cout << "Our free complimentary nametags can only fit 6 characters." << std::endl;
+		std::cout << "Please, change your name." << std::endl;
+		try
+		{
+			std::string newName;
+			std::cin >> newName;
+			throw newName;
+		}
+		catch (std::string reName)
+		{
+			std::cout << "Processing..." << std::endl;
+			int i = 0;
+			int lengthReplacer = reName.length();
+			int counter = 1;
+			for (i; i < lengthReplacer; i++)
+			{
+				std::cout << counter << ": " << reName.at(i) << std::endl;
+				counter++;
+			}
+			if (counter > 6)
+			{
+				throwException("NameLength");
+			}
+		}
 	}
 }
 
@@ -76,11 +101,30 @@ void DivideByZero()
 	Menu();
 }
 
-
+//The user will enter a random name of their choice which can only be 6 characters or shorter.
 void NameLength()
 {
-	//The user will enter a random name of their choice which can only be 6 characters or shorter.
-	
+	std::string userName;
+	std::cout << std::endl;
+	std::cout << "Tell me your name to see if it fits our free complimentary nametags." << std::endl;
+	std::cin >> userName;
+	std::cout << "Processing..." << std::endl;
+	int i = 0;
+	int lengthReplacer = userName.length();
+	int counter = 0;
+	for (i; i < lengthReplacer; i++)
+	{
+		counter++;
+		std::cout << counter << ": " << userName.at(i) << std::endl;		
+	}
+	if (counter > 6)
+	{
+		throwException("NameLength");
+	}
+
+	std::cout << "Nice name! Your free complimentary nametag is in the mail. :)" << std::endl;
+	system("Pause");
+	Menu();	
 }
 
 void Birthday()
